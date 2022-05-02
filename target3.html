@@ -56,7 +56,10 @@
   <script>
     AFRAME.registerComponent('mytarget', {
       init: function () {
-        console.log('dsadasd')
+        console.log('init')
+         this.el.addEventListener('targetFound', event => {
+            console.log("target found");
+          });
       }
     });
   </script>
