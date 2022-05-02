@@ -58,12 +58,15 @@
         console.log('init')
          this.el.addEventListener('targetFound', event => {
             const previewButton = document.querySelector("#preview-button");
+            console.log(previewButton)
+
             previewButton.addEventListener('click', () => {
-            previewButton.setAttribute("visible", false);
-            const testVideo = document.createElement("video");
-            document.querySelector("#video").setAttribute("src", "#video-mp4");
-            document.querySelector("#video-mp4").play();
-           });
+              console.log('clicked')
+              previewButton.setAttribute("visible", false);
+              const testVideo = document.createElement("video");
+              document.querySelector("#video").setAttribute("src", "#video-mp4");
+              document.querySelector("#video-mp4").play();
+            });
             console.log("target found");
           });
         this.el.addEventListener('targetLost', event => {
