@@ -87,8 +87,8 @@
           paintandquestPreviewButton.addEventListener('click', () => {
             paintandquestPreviewButton.setAttribute("visible", false);
             const testVideo = document.createElement("video");
-            const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
-            if (canplayWebm == "") {
+            // const canplayWebm = testVideo.canPlayType('video/webm; codecs="vp8, vorbis"');
+            if (true) {
               document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
               document.querySelector("#paintandquest-video-mp4").play();
             } else {
@@ -257,9 +257,9 @@
         <img id="icon-right" src="./assets/card-example/icons/right.png" /> -->
         <img id="paintandquest-preview" src="./paintandquest-preview.png" />
         <video id="paintandquest-video-mp4" autoplay="false" loop="true"
-          src="./paintandquest.mp4"></video>
-        <video id="paintandquest-video-webm" autoplay="false" loop="true"
-          src="./paintandquest.webm"></video>
+          src="./hackathon.mp4"></video>
+        <!-- <video id="paintandquest-video-webm" autoplay="false" loop="true"
+          src="./paintandquest.webm"></video> -->
         <!-- <img id="coffeemachine-preview" src="./assets/card-example/portfolio/coffeemachine-preview.png" />
         <img id="peak-preview" src="./assets/card-example/portfolio/peak-preview.png" /> -->
 
