@@ -14,7 +14,6 @@
     device-orientation-permission-ui="enabled: false">
 
     <a-assets>
-      <img id="card" src="./card.png" />
       <!-- <img id="icon-play" src="./play.png" /> -->
       <img id="video-preview" src="./placeholderImage.webp" />
       <video id="video-mp4" autoplay="false" loop="true" src="./hackathon.mp4"></video>
@@ -22,7 +21,6 @@
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
     <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 1">
-        <a-plane src="#card"></a-plane>
         <a-entity visible=true id="panel">
           <a-text value="hackathon" color="black" align="center" width="2"></a-text>
           <a-entity id="portfolio-item0">
