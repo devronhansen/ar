@@ -10,8 +10,10 @@
 
     const sceneEl = document.querySelector('a-scene');
     const arSystem = sceneEl.systems["mindar-image-system"];
-    const exampleTarget = document.querySelector('#example-target');
-    const examplePlane = document.querySelector('#example-plane');
+
+    const diveTarget = document.querySelector("#dive-target");
+    const stickerTarget = document.querySelector("#sticker-target");
+    const badgeTarget = document.querySelector("#badge-target");
     
     // arReady event triggered when ready
     sceneEl.addEventListener("arReady", (event) => {
@@ -22,24 +24,20 @@
       console.log("MindAR failed to start")
     });
     // detect target found
-    exampleTarget.addEventListener("targetFound", event => {
-      console.log("target found");
-      console.log(event);
-
-      // TODO: how to determine which object was found?
-      console.log(event.target.id)
-
-      let plane = sceneEl.querySelector("#example-plane")
+    diveTarget.addEventListener("targetFound", event => {
+      console.log(">>> found dive target");
+    });
+    stickerTarget.addEventListener("targetFound", event => {
+      console.log(">>> found sticker target");
+    });
+    badgeTarget.addEventListener("targetFound", event => {
+      console.log(">>> found badge target");
+      let plane = sceneEl.querySelector("#badge-plane");
       plane.setAttribute('position', {x: 0.5, y: 0.5, z: 0});
-    });
-    // detect target lost
-    exampleTarget.addEventListener("targetLost", event => {
-      console.log("target lost");
-    });
-    // detect click event
-    examplePlane.addEventListener("click", event => {
-      console.log("plane click");
-      console.log(event)
+
+      plane.addEventListener('click', event => {
+        console.log(">>> badge plane clicked")
+      })
     });
 
         });
@@ -52,18 +50,18 @@
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
   
         <!-- a dive into the unknown -->
-        <a-entity mindar-image-target="targetIndex: 0">
-            <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-entity id="dive-target" mindar-image-target="targetIndex: 0">
+            <a-plane id="dive-plane" class="clickable" color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
         </a-entity>
 
         <!-- a sticker -->
-        <a-entity mindar-image-target="targetIndex: 1">
-            <a-plane color="green" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-entity id="sticker-target" mindar-image-target="targetIndex: 1">
+            <a-plane id="sticker-plane" class="clickable" color="green" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
         </a-entity>
 
         <!-- conference badge -->
-        <a-entity id="example-target" mindar-image-target="targetIndex: 2">
-            <a-plane id="example-plane" class="clickable" color="red" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-entity id="badge-target" mindar-image-target="targetIndex: 2">
+            <a-plane id="badge-plane" class="clickable" color="red" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
         </a-entity>
       </a-scene>
     </body>
