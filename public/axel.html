@@ -29,7 +29,7 @@
           console.log(event.target.id);
 
           let plane = sceneEl.querySelector("#example-plane");
-          plane.setAttribute("position", { x: 0.5, y: 0.1, z: 0 });
+          plane.setAttribute("position", { x: 0.5, y: 0, z: 0 });
         });
         // detect target lost
         exampleTarget.addEventListener("targetLost", (event) => {
@@ -85,6 +85,8 @@
           rotation="0 0 0"
         ></a-plane>
       </a-entity>
+      <a-sphere sphere-collider color="blue" position="1 0 0" radius="0.5"></a-sphere>
+
 
       <!-- a sticker -->
       <a-entity
@@ -104,21 +106,21 @@
             height="0.18"
             width="1"
             rotation="0 0 0"
-            position="0 0.6 0"
+            position="0 -0.6 0"
           ></a-plane>
           <a-plane
             src="#topic1"
             height="0.18"
             width="1"
             rotation="0 0 0"
-            position="0 0.8 0"
+            position="0 -0.8 0"
           ></a-plane>
           <a-plane
             src="#topic1"
             height="0.18"
             width="1"
             rotation="0 0 0"
-            position="0 1.0 0"
+            position="0 -1.0 0"
           ></a-plane>
         </a-entity>
       </a-entity>
